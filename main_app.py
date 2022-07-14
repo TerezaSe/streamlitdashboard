@@ -23,7 +23,7 @@ st.title('Moje prvni appka')
 
 st.write('Toto je moje prvni aplikace, kterou delam')
 
-page = st.sidebar.radio('Select page',['Test','Thompson'])
+page = st.sidebar.radio('Select page',['Mapa','Thompson'])
 if page == 'Mapa':
     st.write('Mapa používání sdílených dat v Edinbourgu')
     fig = px.scatter_mapbox(df_temp,lat='start_station_latitude', lon='start_station_longitude')
