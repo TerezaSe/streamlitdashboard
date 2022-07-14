@@ -4,7 +4,7 @@ st.title('Moje prvni appka')
 
 st.write('Toto je moje prvni aplikace, kterou delam')
 
-page = st.sidebar.radio('Select page',['Test','Thomson'])
+page = st.sidebar.radio('Select page',['Test','Thompson'])
 if page == 'Test':
     st.write('Toto je moje prvni aplikace, kterou delam')
 if page == 'Thompson':
