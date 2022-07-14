@@ -36,18 +36,20 @@ df_bikes_afternoon = pd.read_sql(sql=query_afternoon, con=engine)
 #vizualizace
 ##################
 
-
+st.set_page_config(layout="wide")
 st.title('Moje prvni appka')
 
 st.write('Toto je moje prvni aplikace, kterou delam')
 
 page = st.sidebar.radio('Select page',['Mapa','Thompson'])
 if page == 'Mapa':
+
     st.header('Mapa používání sdílených dat v Edinbourgu')
-    st.write('Počáteční stanice ráno mezi 6 a 9')
-    st.map(df_bikes_morning)
-    st.write('Počáteční stanice odpoledne mezi 15 a 19')
-    st.map(df_bikes_afternoon)
+    col1, col2 = st.columns(2)
+    col1.write('Počáteční stanice ráno mezi 6 a 9')
+    col1.map(df_bikes_morning)
+    col2.write('Počáteční stanice odpoledne mezi 15 a 19')
+    col2.map(df_bikes_afternoon)
 
 
 if page == 'Thompson':
